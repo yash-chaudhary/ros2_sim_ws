@@ -35,8 +35,3 @@ The following steps run through the workspace setup.
     * \[Issue\] Model meshes resource could not be found and loaded by RViz2 (despite using proper env-hooks)
     * \[Tmp Fix\] Use sam_bot URDF from nav2 stack docs to ensure a robot could be visualised in RViz
 * \[Issue\] Unable to create [moon world](https://app.gazebosim.org/OpenRobotics/fuel/models/Apollo15%20Landing%20Site%20Heightmap%201000x1000%20meters?fbclid=IwAR1pLdfhnXSIh05fvZ3V84veMrEM5-CD4LSQFrUtQ19ZjxCCOwCKv9LLWaM)  due to unloadable assets 
-
-
-Simulation and visualisation were high priority for this workspace. Initially the goal was run all GUI programs (GazeboSim and RViz) in a docker container along with all ROS2 nodes.
-However, after many unsucessful attemps, Gazebo-Fortress was not able to render the map of the virtual world which in turn caused RViz to complain thus rendering the 
-simulation environment pretty pointless. Instead a new strategy was taken to run all GUI apps on the host machine and run all ROS2 nodes in a docker container.
