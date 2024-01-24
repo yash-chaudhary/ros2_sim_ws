@@ -12,7 +12,7 @@ Workspace environment setup:
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
 
-ROS packages:
+## ROS Packages
 #### `sam_bot_description`
 Contains robot model including all associated files such as meshes, textures and materials.
 
