@@ -22,8 +22,8 @@ Contains launch files that will launch ROS2 nodes in docker and launch GUI apps 
 #### `sam_bot_gazebo`
 Contains world files.
 
-#### `sam_bot_application`
-Contains ROS2 nodes for navigation.
+#### `sam_bot_controller`
+Contains ROS2 nodes to control robot.
 
 ## Implementation
 Below is a graphic depicting the relationship between different parts of this workspace
