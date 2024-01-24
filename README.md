@@ -20,10 +20,10 @@ Contains robot model including all associated files such as meshes, textures and
 Contains launch files that will launch ROS2 nodes in docker and launch GUI apps in host machine.
 
 #### `sam_bot_gazebo`
-Contains world files
+Contains world files.
 
 #### `sam_bot_application`
-Contains ROS2 nodes for navigation
+Contains ROS2 nodes for navigation.
 
 ## Implementation
 Below is a graphic depicting the relationship between different parts of this workspace
