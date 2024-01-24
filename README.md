@@ -1,6 +1,5 @@
 # ROS2 Navigation Simulation
 
-## Introduction
 This repository aims to provide a foundation for simulating robots with the Robot Operating System 2 (ROS2).
 
 Using simultaneous localisation and mapping (SLAM), a map of a virtual world is generated. Then using the Navigation 2 stack, a robot is able
@@ -13,6 +12,9 @@ Workspace environment setup:
 * Docker Engine / Docker Desktop
 
 ## ROS Packages
+
+Inside `src` folder:
+
 * `sam_bot_description` - Contains robot model including all associated files such as meshes, textures and materials.
 
 * `sam_bot_bringup` - Contains launch files that will launch ROS2 nodes in docker and launch GUI apps in host machine.
