@@ -245,7 +245,7 @@
 
   <gazebo>
     <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-      <parameters>$(find config)/ros2_control/diff_drive_controller_velocity.yaml</parameters>
+      <parameters>$(find sam_bot_bringup)/config/ros2_control/diff_drive_controller_velocity.yaml</parameters>
     </plugin>
   </gazebo>
 
