@@ -30,11 +30,11 @@ The following steps run through the workspace setup.
 
 
 ## Bugs/Limitations/Issues
-* \[Limitation\] Not able to Gazebo-Fortress seamlessly in Docker container
+* \[Limitation\] Not able to run Gazebo-Fortress seamlessly in Docker container
     * Used OSRF Docker image to install full desktop for GUI applications
     * Used x11 to enable X server in container to use host display
     * Able to launch Gazebo-Fortress and RViz2
-    * \[Issue\] Gazebo-Fortress could not render the physics engine and so robot not able to visualise surroundings causing issues in RViz2
+    * \[Issue\] Gazebo-Fortress could not render model and physics engine, so robot not able to sense surroundings causing issues in RViz2
     * \[Tmp Fix\] Run GUI apps in host machine and use Docker container to run ROS2 nodes
 * \[Limitation\] Omission of [X1 Config 6 SDF format robot](https://app.gazebosim.org/OpenRobotics/fuel/models/X1%20Config%206)
     * Able to load SDF model into world
