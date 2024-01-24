@@ -7,8 +7,8 @@ Using simultaneous localisation and mapping (SLAM), a map of a virtual world is 
 to navigate through the virtual world filled with obstacles.
 
 Workspace environment setup:
-* ROS2 distribution: Humble Hawksbill (humble)
-* Simulation: Gazebo-Fortress (GazeboSim)
+* ROS2 distribution: [Humble Hawksbill](https://docs.ros.org/en/humble/Installation.html) (humble)
+* Simulation: [Gazebo-Fortress](https://gazebosim.org/docs/fortress/getstarted) (GazeboSim)
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
 
