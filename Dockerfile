@@ -1,4 +1,6 @@
 # refer to https://www.ros.org/reps/rep-2001.html?fbclid=IwAR3skEz4c_LO0KLoRAw6SPZBmN4hTF00CWArge8Ipr39bwdhCRBJXaRJCQ0#humble-hawksbill-may-2022-may-2027
+# refer to https://packages.ros.org/
+
 FROM osrf/ros:humble-desktop-full
 
 # set container working directory
