@@ -37,6 +37,14 @@ Inside `src` folder:
 
 Below is a graphic depicting the relationship between different parts of this workspace
 
+!
+
+## Demonstration
+
+Add video demo here 
+
+!
+
 ## Usage
 The following steps run through the workspace setup:
 1. Install dependencies
