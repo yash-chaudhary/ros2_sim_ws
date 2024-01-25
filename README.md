@@ -34,8 +34,34 @@ Below is a graphic depicting the relationship between different parts of this wo
 
 
 ## Setup
-The following steps run through the workspace setup. 
+The following steps run through the workspace setup:
+1. Install dependencies
 
+    ```bash
+    git clone https://github.com/yash-chaudhary/ros2_sim_ws.git
+    source /opt/ros/humble/setup.bash
+    sudo rosdep init
+    rosdep update
+    rosdep install --from-paths src
+    ```
+
+1. Run setup script
+
+    ```bash
+    placeholder
+    ```
+
+1. Source the workspace
+
+    ```bash
+    placeholder
+    ```
+
+1. Launch the simulation
+
+    ```bash
+    placeholder
+    ```
 
 
 
