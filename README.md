@@ -24,11 +24,21 @@ Inside `src` folder:
 * `sam_bot_controller` - Contains ROS2 nodes to control robot.
 
 ## Implementation
+1. Create URDF of robot and add relevant plugins for control (i.e. ros2_control diff_drive).
+2. Define the simulation environment the robot will reside in.
+3. Create launch files that start relevant nodes, especially those related to robot TFs.
+4. Read user input commands and in conjunction with Nav2 Simple Commander API, control robot navigation.
+
 Below is a graphic depicting the relationship between different parts of this workspace
+
 
 
 ## Setup
 The following steps run through the workspace setup. 
+
+
+
+
 
 
 ## Bugs/Limitations/Issues
