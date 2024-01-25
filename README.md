@@ -7,9 +7,10 @@ to navigate through the virtual world filled with obstacles.
 
 Workspace environment setup:
 * ROS2 distribution: [Humble Hawksbill](https://docs.ros.org/en/humble/Installation.html) (humble)
-* Simulation: [Gazebo-Fortress](https://gazebosim.org/docs/fortress/getstarted) (GazeboSim)
+* Simulation: [Gazebo-Fortress](https://gazebosim.org/docs/fortress/getstarted) (Gazebo Sim)
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
+* Note that there was a recent breaking change in [gz_ros2_control](https://github.com/ros-controls/gz_ros2_control) so the repo is manually install for now.
 
 ## ROS Packages
 
