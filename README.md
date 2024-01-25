@@ -10,7 +10,7 @@ Workspace environment setup:
 * Simulation: [Gazebo-Fortress](https://gazebosim.org/docs/fortress/getstarted) (Gazebo Sim)
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
-* Note that there was a recent breaking change in [gz_ros2_control](https://github.com/ros-controls/gz_ros2_control) so the repo is manually install for now.
+* Note that there was a recent breaking change in [gz_ros2_control](https://github.com/ros-controls/gz_ros2_control) so the repo is manually installed for now.
 
 ## ROS Packages
 
