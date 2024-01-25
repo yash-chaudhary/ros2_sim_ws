@@ -11,6 +11,12 @@ Workspace environment setup:
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
 
+## Some Pointers
+It's probably best to dual boot you're computer with Ubuntu for maximum performance and efficiency. If you are
+using a VirtualBox VM, all default settings should allow everything to work. However, if you are running VMware
+Workstation, at the the time of writing this, I had to turn off 3D Acceleration to ensure Gazebo Sim would work properly (this caused many headaches as the Gazebo Sim effects the operation of the visualization in RViz)
+
+
 ## ROS Packages
 
 Inside `src` folder:
