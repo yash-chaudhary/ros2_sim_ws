@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'sam_bot_controller_exe = sam_bot_controller.teleop_key_commander:main'
         ],
     },
 )
