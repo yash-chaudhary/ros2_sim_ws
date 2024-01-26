@@ -35,15 +35,19 @@ Inside `src` folder:
 3. Create launch files that start relevant nodes, especially those related to robot TFs.
 4. Read user input commands and in conjunction with Nav2 Simple Commander API, control robot navigation.
 
+Add some notes about Nav2 action server and implementation
+
+TODO
+
 Below is a graphic depicting the relationship between different parts of this workspace
 
-!
+TODO
 
 ## Demonstration
 
 Add video demo here 
 
-!
+TODO
 
 ## Usage
 The following steps run through the workspace setup:
