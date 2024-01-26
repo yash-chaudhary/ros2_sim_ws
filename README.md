@@ -1,6 +1,6 @@
 # ROS2 Navigation Simulation
 
-This repository aims to provide a foundation for simulating robots with the Robot Operating System 2 (ROS2). This repository builds on these templates: [repo1](https://github.com/gazebosim/ros_gz_project_template/blob/fortress/README.md), [repo2](https://github.com/art-e-fact/navigation2_ignition_gazebo_example).
+This repository aims to provide a foundation for simulating robots with the Robot Operating System 2 (ROS2). This repository builds on these templates: [repo1](https://github.com/gazebosim/ros_gz_project_template/tree/fortress), [repo2](https://github.com/art-e-fact/navigation2_ignition_gazebo_example).
 
 Using simultaneous localisation and mapping (SLAM), a map of a virtual world is generated. Then using the Navigation 2 stack, a robot is able
 to navigate through the virtual world filled with obstacles. 
