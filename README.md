@@ -81,6 +81,16 @@ The following steps run through the workspace setup:
     ```
 
 1. Run Makefile help
+    ```bash
+    # check if you have make installed
+    /usr/bin/make --version
+    
+    # if not then install
+    sudo apt install -y make
+
+    # if this doesn't work use this command
+    sudo apt install build-essential
+    ```
 
     ```bash
     make help
