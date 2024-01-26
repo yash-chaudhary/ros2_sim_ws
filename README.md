@@ -139,4 +139,5 @@ The following steps run through the workspace setup:
     * SDF model loaded in Gazebo-Fortress
     * \[Issue\] Model meshes resource could not be found and loaded by RViz2 (despite using proper env-hooks)
     * \[Tmp Fix\] Use sam_bot URDF from nav2 stack docs to ensure a robot could be visualised in RViz
+* \[Limitation\] Need to add unit and integration tests for custom node and launch process
 * \[Issue\] Unable to create [moon world](https://app.gazebosim.org/OpenRobotics/fuel/models/Apollo15%20Landing%20Site%20Heightmap%201000x1000%20meters?fbclid=IwAR1pLdfhnXSIh05fvZ3V84veMrEM5-CD4LSQFrUtQ19ZjxCCOwCKv9LLWaM)  due to unloadable assets 
