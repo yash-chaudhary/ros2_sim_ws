@@ -143,32 +143,32 @@ def main():
         nav_start = navigator.get_clock().now()
         navigator.followWaypoints(goal_poses)
 
-        i = 0
-        while not navigator.isTaskComplete():
+        #i = 0
+        #while not navigator.isTaskComplete():
         
             # Do something with the feedback
-            i = i + 1
-            feedback = navigator.getFeedback()
+        #    i = i + 1
+        #    feedback = navigator.getFeedback()
 
-            if feedback and i % 5 == 0:
-                print('Executing current waypoint: ' +
-                    str(feedback.current_waypoint + 1) + '/' + str(len(goal_poses)))
-                now = navigator.get_clock().now()
+        #    if feedback and i % 5 == 0:
+        #        print('Executing current waypoint: ' +
+        #            str(feedback.current_waypoint + 1) + '/' + str(len(goal_poses)))
+        #        now = navigator.get_clock().now()
 
                 # Some navigation timeout to demo cancellation
-                if now - nav_start > Duration(seconds=600):
-                    navigator.cancelTask()
+        #        if now - nav_start > Duration(seconds=600):
+        #            navigator.cancelTask()
 
         # Do something depending on the return code
-        result = navigator.getResult()
-        if result == TaskResult.SUCCEEDED:
-            print('Goal succeeded!')
-        elif result == TaskResult.CANCELED:
-            print('Goal was canceled!')
-        elif result == TaskResult.FAILED:
-            print('Goal failed!')
-        else:
-            print('Goal has an invalid return status!')
+        #result = navigator.getResult()
+        #if result == TaskResult.SUCCEEDED:
+        #    print('Goal succeeded!')
+        #elif result == TaskResult.CANCELED:
+        #    print('Goal was canceled!')
+        #elif result == TaskResult.FAILED:
+        #    print('Goal failed!')
+        #else:
+        #    print('Goal has an invalid return status!')
 
 
     try:
@@ -178,14 +178,18 @@ def main():
             
             # emergency stop
             if key == 's':
+                print("Emergency Stop Initiated!")
                 navigator.cancelTask()
             # navigate to waypoint set 1
             elif key == 'q': 
+                print("Following waypoint set 1")
                 start_navigation(waypoint_set_1)
             # navigate to waypoint set 2
             elif key == 'w':
+                print("Following waypoint set 2")
                 start_navigation(waypoint_set_2)
             elif key == '\x03':
+                print("Exiting ...")
                 navigator.cancelTask()
                 break   # Ctrl+C t exit
 
