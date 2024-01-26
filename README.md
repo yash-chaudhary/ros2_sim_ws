@@ -87,12 +87,12 @@ The following steps run through the workspace setup:
     ```bash
     make help
     ```
-Available targets:
-  - build: Creates docker image
-  - run_display: Runs docker container and launches simulations and visualisations
-  - run_nav: Creates bash process in container to control robot navigation
-  - cleanup: Removes image and container
-  - help: Show this help message
+    Available targets:
+      - build: Creates docker image
+      - run_display: Runs docker container and launches simulations and visualisations
+      - run_nav: Creates bash process in container to control robot navigation
+      - cleanup: Removes image and container
+      - help: Show this help message
 
 1. Build image
 
@@ -111,6 +111,10 @@ Available targets:
     ```bash
     make run_nav
     ```
+    Available commands:
+    - Press key 'q' to run navigation routine, waypoint set 1
+    - Press key 'w' to run navigation routine, waypoint set 2
+    - Press key 's' to execute emergency stop
 
  1. When done remove image and container
 
