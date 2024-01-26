@@ -3,20 +3,25 @@ VERSION=humble
 CONTAINER_NAME=ros2
 
 
-# command to list all make commands
 help:
-	@echo -e "\033[1;34m[make targets]:\033[0m"
-	@egrep -h '\s##\s' $(MAKEFILE_LIST) \
-		| awk 'BEGIN {FS = ":.*?## "}; \
-		{printf "\033[1;36m%-20s\033[0m %s\n", $$1, $$2}'
+	@printf "\nUsage: make <command>\n"
+	@grep -F -h "##@" $(MAKEFILE_LIST) | grep -F -v grep -F | sed -e 's/\\$$//' | awk 'BEGIN {FS = ":*[[:space:]]*##@[[:space:]]*"}; \
+	{ \
+		if($$2 == "") \
+			pass; \
+		else if($$0 ~ /^#/) \
+			printf "\n%s\n", $$2; \
+		else if($$1 == "") \
+			printf "     %-20s%s\n", "", $$2; \
+		else \
+			printf "\n    \033[34m%-20s\033[0m %s\n", $$1, $$2; \
+	}'
 
 
-# command to build docker image
 build:
 	docker build -t $(NAME):$(VERSION) .
 
 
-# command to create docker container to run simulations and visualisations
 run_display:
 	@xhost +local:root && docker run \
 		-it \
@@ -31,24 +36,17 @@ run_display:
 		--name $(CONTAINER_NAME) \
 		$(NAME):$(VERSION)
 
-	
-container=`docker ps -a -q`
-image=`docker images | awk '/^<none>/ { print $$3 }'`
 
-
-# command to start navigation controller
 run_nav:
 	docker exec -it $(CONTAINER_NAME) sh -c "ros2 run sam_bot_controller sam_bot_controller_exe"
 
 
-# command to remove all docker assets 
 cleanup:
-	@if [ "$(image)" != "" ] ; then \
-		echo "Removing Docker image: $(image)"; \
-		docker rmi $(image); \
+	@if [ "$(shell docker images -q $(NAME):$(VERSION))" != "" ] ; then \
+		echo "Removing Docker image: $(NAME):$(VERSION)"; \
+		docker rmi $(NAME):$(VERSION); \
 	fi
-	@if [ "$(container)" != "" ] ; then \
-		echo "Removing Docker container: $(container)"; \
-		docker rm $(container); \
+	@if [ "$(shell docker ps -a -q -f name=$(CONTAINER_NAME))" != "" ] ; then \
+		echo "Removing Docker container: $(CONTAINER_NAME)"; \
+		docker rm $(CONTAINER_NAME); \
 	fi
-	
