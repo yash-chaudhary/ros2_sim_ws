@@ -80,7 +80,7 @@ Available targets:
  1. Launch navigation controller (open a new terminal and run this)
 
     ```bash
-    make run_display
+    make run_nav
     ```
 
  1. When done remove image and container
