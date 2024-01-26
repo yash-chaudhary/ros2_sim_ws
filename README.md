@@ -63,11 +63,11 @@ The following steps run through the workspace setup:
     make help
     ```
 Available targets:
-  - build: &emsp;&emsp;        Creates docker image
-  - run_display:&emsp;&emsp;   Runs docker container and launches simulations and visualisations
-  - run_nav:   &emsp;&emsp;    Creates bash process in container to control robot navigation
-  - cleanup:  &emsp;&emsp;     Removes image and container
-  - help:   &emsp;&emsp;       Show this help message
+  - build: Creates docker image
+  - run_display: Runs docker container and launches simulations and visualisations
+  - run_nav: Creates bash process in container to control robot navigation
+  - cleanup: Removes image and container
+  - help: Show this help message
 
 1. Build image
 
