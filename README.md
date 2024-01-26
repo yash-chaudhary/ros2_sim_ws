@@ -47,37 +47,47 @@ Add video demo here
 
 ## Usage
 The following steps run through the workspace setup:
-1. Install dependencies
+1. Clone repository
 
     ```bash
     git clone https://github.com/yash-chaudhary/ros2_sim_ws.git
-    source /opt/ros/humble/setup.bash
-    sudo rosdep init
-    rosdep update
-    rosdep install --from-paths src
     ```
 
-1. Run setup script
+1. Run Makefile help
 
     ```bash
-    placeholder
+    make help
     ```
+Available targets:
+  - build:        Create docker image
+  - run_display:  Runs docker container and launches simulations and visualisations
+  - run_nav:      Creates bash process in container to control robot navigation
+  - cleanup:      Removes image and container
+  - help:         Show this help message
 
-1. Source the workspace
+1. Build image
 
     ```bash
-    placeholder
+    make build
     ```
 
-1. Launch the simulation
+1. Launch the simulation and visualisation
 
     ```bash
-    placeholder
+    make run_display
+    ```
+    
+ 1. Launch navigation controller (open a new terminal and run this)
+
+    ```bash
+    make run_display
     ```
 
+ 1. When done remove image and container
 
-
-
+    ```bash
+    make cleanup
+    ```
 
 ## Bugs/Limitations/Issues
 * \[Limitation\] Not able to run Gazebo-Fortress seamlessly in Docker container
