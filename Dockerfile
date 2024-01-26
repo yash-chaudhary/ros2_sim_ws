@@ -2,6 +2,7 @@
 # refer to https://packages.ros.org/
 
 FROM osrf/ros:humble-desktop-full
+SHELL ["/bin/bash", "-c"]
 
 # set container working directory
 WORKDIR /ros2_sim_ws
@@ -40,7 +41,7 @@ RUN source /opt/ros/humble/setup.bash --extend && colcon build --symlink-install
 
 # setup bashrc
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
-RUN echo "source ./install/setup.bash" >> /root/.bashrc
+RUN echo "./install/setup.bash" >> /root/.bashrc
 
 # run entrypoint script when creating docker container from this image
 COPY entrypoint.sh /
