@@ -65,7 +65,7 @@ stop by pressing the 's' key. This will stop the robot. Therefore a new node was
 
 ## Demonstration
 
-Here's a video demo I made so that everyone can follow along. ![ROS Simulation with Docker Demo](https://vimeo.com/906874396?share=copy#t=0)
+Here's a video demo I made so that everyone can follow along: https://vimeo.com/906874396?share=copy#t=0
 
 ## Usage
 The following steps run through the workspace setup:
