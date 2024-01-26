@@ -4,17 +4,11 @@ set -e
 # source ros2
 source /opt/ros/humble/setup.bash
 
-# build ros2 
-
-
 # source install
-
-
-# launch navigation in docker terminal
-
+source install/setup.bash
 
 # launch navigation controller in another terminal
-
+ros2 launch sam_bot_bringup navigation.py 
 
 # Start an interactive shell
-# /bin/bash
+/bin/bash

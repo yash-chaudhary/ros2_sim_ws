@@ -30,10 +30,18 @@ RUN apt-get update && apt-get install -y \
 # install external package topic_tools and rosdeps
 COPY ws_deps.yaml /tmp
 RUN mkdir src && vcs import --input /tmp/ws_deps.yaml src
-RUN apt update -y && rosdep install --from-paths src 
+RUN apt update && rosdep install --from-paths src 
 
 # copy remaining contents of cloned git repo
 COPY . /ros2_sim_ws
 
+# build ros ros packages
+RUN source /opt/ros/humble/setup.bash --extend && colcon build --symlink-install --executor sequential
+
+# setup bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+RUN echo "source ./install/setup.bash" >> /root/.bashrc
+
 # run entrypoint script when creating docker container from this image
-CMD ["/bin/bash"]
+COPY entrypoint.sh /
+ENTRYPOINT [ "/entrypoint.sh" ]
