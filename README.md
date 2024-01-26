@@ -1,9 +1,9 @@
 # ROS2 Navigation Simulation
 
-This repository aims to provide a foundation for simulating robots with the Robot Operating System 2 (ROS2).
+This repository aims to provide a foundation for simulating robots with the Robot Operating System 2 (ROS2). This reposity builds on this [template](https://github.com/art-e-fact/navigation2_ignition_gazebo_example).
 
 Using simultaneous localisation and mapping (SLAM), a map of a virtual world is generated. Then using the Navigation 2 stack, a robot is able
-to navigate through the virtual world filled with obstacles.
+to navigate through the virtual world filled with obstacles. 
 
 Workspace environment setup:
 * ROS2 distribution: [Humble Hawksbill](https://docs.ros.org/en/humble/Installation.html) (humble)
@@ -11,11 +11,28 @@ Workspace environment setup:
 * Visualisation: Rviz2
 * Docker Engine / Docker Desktop
 
-## Some Pointers
-It's probably best to dual boot you're computer with Ubuntu for maximum performance and efficiency. If you are
-using a VirtualBox VM, all default settings should allow everything to work. However, if you are running VMware
-Workstation, at the the time of writing this, I had to turn off 3D Acceleration to ensure Gazebo Sim would work properly (this caused many headaches as the Gazebo Sim effects the operation of the visualization in RViz)
+Repository overview:
+* Dockerfile: Instructions to produce working docker image
+* entrypoint.sh: Docker container entrypoint script
+* ws_deps.yaml: Docker image dependancies downloaded from source
+* Makefile: Make commands to create/destroy docker environment
+* assets: Images/videos for README
 
+## UPDATE 🔄
+Success! Docker + ROS2 + Nav2 + Gazebo Sim + RViz2 are completely packaged! 
+
+What was the problem?
+Short answer: gz_ros2_control binary package
+Long answer:
+
+**The solution: build with gz_ros2_control from source**
+
+## Some VM Pointers
+It's probably best to dual boot you're computer with Ubuntu for maximum performance and efficiency. This option was not viable for so I used VMware Workstation 17 (free edition).
+1. Download VMware Workstation (version 17 in my case)
+2. Download Ubuntu Jammy (22.04) LTS Image (.iso) file 
+3. Run through VM setup wizard and **IMPORTANTLY, DISABLE 3D acceleration in display options**  if you don't do this everything breaks
+4. NOTE: As we are disabling 3D acceleration, our simulation and visualisation will drop to very low FPS. So it's a better option to dual boot your computer. When a fix comes out such that Gazebo Sim can be rendered with 3D acceleration, the FPS should improve dramatically.
 
 ## ROS Packages
 
@@ -35,11 +52,13 @@ Inside `src` folder:
 3. Create launch files that start relevant nodes, especially those related to robot TFs.
 4. Read user input commands and in conjunction with Nav2 Simple Commander API, control robot navigation.
 
-Add some notes about Nav2 action server and implementation
+The Nav2 Simple Commander API provides an interface to easily interact with Nav2 ROS2 action servers to easily integrate robot navigation. This API was highly leveraged for navigation in this workspace.
 
-TODO
+The user is able to command robot navigation by typing characters on their keyboard. The workspace comes pre-packaged with a list of poses (navigation goals) that are bundled together in a list of waypoints.
+The users is able to select between 2 pre-defined waypoint sets and upon selection, the robot will start going to each of the poses defined in the waypoint set. The user is also about to initiate an emergency 
+stop by pressing the 's' key. This will stop the robot.
 
-Below is a graphic depicting the relationship between different parts of this workspace
+Below is a graphic depicting the relationship between different parts of this workspace.
 
 TODO
 
@@ -56,7 +75,7 @@ The following steps run through the workspace setup:
     ```bash
     git clone https://github.com/yash-chaudhary/ros2_sim_ws.git
     ```
-1. Make entrypoint.sh executable
+1. Make entrypoint.sh executable (if not already)
 
     ```bash
     chmod +x entrypoint.sh
@@ -99,12 +118,6 @@ Available targets:
     ```
 
 ## Bugs/Limitations/Issues
-* \[Limitation\] Not able to run Gazebo-Fortress seamlessly in Docker container
-    * Used OSRF Docker image to install full desktop for GUI applications
-    * Used x11 to enable X server in container to use host display
-    * Able to launch Gazebo-Fortress and RViz2
-    * \[Issue\] Gazebo-Fortress could not render model and physics engine, so robot not able to sense surroundings causing issues in RViz2
-    * \[Tmp Fix\] Run GUI apps in host machine and use Docker container to run ROS2 nodes
 * \[Limitation\] Omission of [X1 Config 6 SDF format robot](https://app.gazebosim.org/OpenRobotics/fuel/models/X1%20Config%206)
     * Able to load SDF model into world
     * Added sensors, robot_state_publisher, joint_state_publisher, odometry plugins
