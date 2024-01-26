@@ -155,11 +155,11 @@ def generate_launch_description():
         output="screen",
     )
 
-    load_control_manager = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[default_model_path, default_diff_drive_config]
-    )
+    #load_control_manager = Node(
+    #    package="controller_manager",
+    #    executable="ros2_control_node",
+    #    parameters=[default_model_path, default_diff_drive_config]
+    #)
 
 
     load_joint_state_controller = ExecuteProcess(
@@ -276,7 +276,7 @@ def generate_launch_description():
             spawn_entity,
             robot_localization_node,
             rviz_node,
-            load_control_manager,
+            #load_control_manager,
             RegisterEventHandler(
                 event_handler=OnProcessExit(
                     target_action=spawn_entity,
