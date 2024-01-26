@@ -32,7 +32,7 @@ run_display:
 
 
 run_nav:
-	docker exec -it $(CONTAINER_NAME) sh -c "ros2 run sam_bot_controller sam_bot_controller_exe"
+	docker exec -it $(CONTAINER_NAME) bash -c "source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run sam_bot_controller sam_bot_controller_exe"
 
 
 cleanup:
