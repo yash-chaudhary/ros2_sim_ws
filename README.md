@@ -22,7 +22,9 @@ Repository overview:
 Success! Docker + ROS2 + Nav2 + Gazebo Sim + RViz2 are completely packaged! 
 
 What was the problem? <br />
+<br />
 Short answer: gz_ros2_control binary package <br />
+<br />
 Long answer: <br />
 ![gz_ros2_control issue](https://github.com/yash-chaudhary/ros2_sim_ws/blob/main/assets/gz_ros2_control_binary_install_error.png)
 
