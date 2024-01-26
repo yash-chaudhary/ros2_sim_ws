@@ -37,6 +37,10 @@ def generate_launch_description():
     # rviz config path
     default_rviz_config_path = os.path.join(pkg_project_bringup, "config/rviz/urdf_config.rviz")
     
+    # diff drive yaml file
+    default_diff_drive_config = os.path.join(pkg_project_bringup, "config/ros2_control/diff_drive_controller_velocity.yaml")
+    
+    
     # world path 
     world_path = os.path.join(pkg_project_gazebo, "worlds/empty.sdf")
     
@@ -150,6 +154,13 @@ def generate_launch_description():
         ],
         output="screen",
     )
+
+    load_control_manager = Node(
+        package="controller_manager",
+        executable="ros2_control_node",
+        parameters=[default_model_path, default_diff_drive_config]
+    )
+
 
     load_joint_state_controller = ExecuteProcess(
         name="activate_joint_state_broadcaster",
@@ -265,6 +276,7 @@ def generate_launch_description():
             spawn_entity,
             robot_localization_node,
             rviz_node,
+            load_control_manager,
             RegisterEventHandler(
                 event_handler=OnProcessExit(
                     target_action=spawn_entity,

@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /ros2_sim_ws
 
 # add additional required packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     curl \
     gnupg \
     lsb-release \
@@ -16,10 +16,12 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     ros-dev-tools \
     ros-humble-joint-state-publisher \
+    ros-humble-hardware-interface \
     ros-humble-navigation2 \
     ros-humble-nav2-bringup \
     ros-humble-ros2-control \
     ros-humble-ros2-controllers \
+    ros-humble-rmw-cyclonedds-cpp \
     ros-humble-ros-gz \
     ros-humble-robot-localization \
     ros-humble-robot-state-publisher \
@@ -31,7 +33,7 @@ RUN apt-get update && apt-get install -y \
 # install external package topic_tools and rosdeps
 COPY ws_deps.yaml /tmp
 RUN mkdir src && vcs import --input /tmp/ws_deps.yaml src
-RUN apt update && rosdep install --from-paths src 
+RUN apt update && apt-get upgrade -y && rosdep install --from-paths src --ignore-src -r -y 
 
 # copy remaining contents of cloned git repo
 COPY . /ros2_sim_ws
@@ -41,7 +43,9 @@ RUN source /opt/ros/humble/setup.bash --extend && colcon build --symlink-install
 
 # setup bashrc
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
-RUN echo "./install/setup.bash" >> /root/.bashrc
+RUN echo "source ./install/setup.bash" >> /root/.bashrc
+RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc
+RUN echo "export GZ_VERSION=fortress"
 
 # run entrypoint script when creating docker container from this image
 COPY entrypoint.sh /
