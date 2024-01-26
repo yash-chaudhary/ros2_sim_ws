@@ -97,6 +97,7 @@ The following steps run through the workspace setup:
 1. Build image
 
     ```bash
+    # NOTE: depending on sudo permission you may need to run: sudo make build (which runs docker as a sudo user)
     make build
     ```
 
