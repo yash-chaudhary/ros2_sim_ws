@@ -1,4 +1,4 @@
-#repositories:
+repositories:
 #  gz_ros2_control:
 #    type: git
 #    url: https://github.com/ros-controls/gz_ros2_control.git
@@ -11,7 +11,7 @@
 #    type: git
 #    url: https://github.com/ros/sdformat_urdf.git
 #    version: ros2
-topic_tools:
+  topic_tools:
     type: git
     url: https://github.com/ros-tooling/topic_tools.git
     version: humble
