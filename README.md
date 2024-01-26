@@ -21,9 +21,10 @@ Repository overview:
 ## UPDATE 🔄
 Success! Docker + ROS2 + Nav2 + Gazebo Sim + RViz2 are completely packaged! 
 
-What was the problem?
-Short answer: gz_ros2_control binary package
-Long answer:
+What was the problem? <br />
+Short answer: gz_ros2_control binary package <br />
+Long answer: <br />
+![gz_ros2_control issue](https://github.com/yash-chaudhary/ros2_sim_ws/blob/main/assets/gz_ros2_control_binary_install_error.png)
 
 **The solution: build with gz_ros2_control from source**
 
@@ -56,11 +57,9 @@ The Nav2 Simple Commander API provides an interface to easily interact with Nav2
 
 The user is able to command robot navigation by typing characters on their keyboard. The workspace comes pre-packaged with a list of poses (navigation goals) that are bundled together in a list of waypoints.
 The users is able to select between 2 pre-defined waypoint sets and upon selection, the robot will start going to each of the poses defined in the waypoint set. The user is also about to initiate an emergency 
-stop by pressing the 's' key. This will stop the robot.
+stop by pressing the 's' key. This will stop the robot. Therefore a new node was created that read user input and created new goals for Nav2.
 
-Below is a graphic depicting the relationship between different parts of this workspace.
-
-TODO
+![docker_container_workspace](https://github.com/yash-chaudhary/ros2_sim_ws/blob/main/assets/simulation_visualsation_docker_instance.png)
 
 ## Demonstration
 
