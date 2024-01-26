@@ -5,7 +5,7 @@ CONTAINER_NAME=ros2
 
 help:
 	@echo "Available targets:"
-	@echo "  - build:        Create docker image"
+	@echo "  - build:        Creates docker image"
 	@echo "  - run_display:  Runs docker container and launches simulations and visualisations"
 	@echo "  - run_nav:      Creates bash process in container to control robot navigation"
 	@echo "  - run_nav:      Removes image and container"
