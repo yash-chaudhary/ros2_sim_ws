@@ -56,6 +56,11 @@ The following steps run through the workspace setup:
     ```bash
     git clone https://github.com/yash-chaudhary/ros2_sim_ws.git
     ```
+1. Make entrypoint.sh executable
+
+    ```bash
+    chmod +x entrypoint.sh
+    ```
 
 1. Run Makefile help
 
