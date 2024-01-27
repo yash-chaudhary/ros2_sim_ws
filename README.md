@@ -132,6 +132,7 @@ The following steps run through the workspace setup:
     ```
 
 ## Bugs/Limitations/Issues
+* \[Limitation\] Simulation is quite slow in VM
 * \[Limitation\] Omission of [X1 Config 6 SDF format robot](https://app.gazebosim.org/OpenRobotics/fuel/models/X1%20Config%206)
     * Able to load SDF model into world
     * Added sensors, robot_state_publisher, joint_state_publisher, odometry plugins
