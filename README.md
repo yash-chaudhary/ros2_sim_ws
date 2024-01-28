@@ -36,6 +36,9 @@ It's probably best to dual boot you're computer with Ubuntu for maximum performa
 2. Download Ubuntu Jammy (22.04) LTS Image (.iso) file 
 3. Run through VM setup wizard and **IMPORTANTLY, DISABLE 3D acceleration in display options**  if you don't do this everything breaks
 4. NOTE: As we are disabling 3D acceleration, our simulation and visualisation will drop to very low FPS. So it's a better option to dual boot your computer. When a fix comes out such that Gazebo Sim can be rendered with 3D acceleration, the FPS should improve dramatically.
+<br />
+This is what happens when you don't disable 3D acceleration in a VMware Workstation VM
+![vm_render_issue](https://github.com/yash-chaudhary/ros2_sim_ws/blob/main/assets/GUI_apps_with_3D_accel_enabled_VMWare.png)
 
 ## ROS Packages
 
